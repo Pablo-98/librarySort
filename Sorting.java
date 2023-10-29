@@ -1,11 +1,22 @@
 public class Sorting{
 
     public static void bubbleSort(String words){
+        // comparing each element in a list , swapping items if necessart, and repeating the pass throug as needed
+        // sample code from csoer
+        for (int i =0; i< a.length; i++){
+            for (int j = 0; j < a.length -1 -i; j++){
+                if (a[j] > a[j+1]){
+                    int temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                }
+            }
+        }
 
     }
     public static void selectionSort(String words){
         
-/*1
+/* sample code from zybooks 
 
 2
 
@@ -42,7 +53,7 @@ for (i = 0; i < numbers.length - 1; ++i) {
 }
     }
     public static void insertionSort(String words){
-        /* 
+        /* sample code from zybooks
         for (i = 1; i < numbers.length; ++i) {
   j = i;
   // Insert numbers[i] into sorted part
