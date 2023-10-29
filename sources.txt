@@ -1,0 +1,7 @@
+1. Selection and insertion sort: CSOER: https://www.thecsoer.com/
+ ( I dont know if we can use this as a source
+  I will ask her on Monday) 
+
+2. Zybooks for course
+
+3. Stalin sort geeksforgeeks.org : https://www.geeksforgeeks.org/add-elements-in-start-to-sort-the-array-variation-of-stalin-sort/
