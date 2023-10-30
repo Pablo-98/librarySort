@@ -1,6 +1,6 @@
 public class Sorting{
 
-    public static void bubbleSort(String words){
+    public static void bubbleSort(String []words){
         // comparing each element in a list , swapping items if necessart, and repeating the pass throug as needed
         // sample code from csoer
 
@@ -18,7 +18,7 @@ public class Sorting{
         }
 
     }
-    public static void selectionSort(String words){
+    public static void selectionSort(String[] words){
         int smallest;
         String temp;
 
@@ -37,8 +37,8 @@ public class Sorting{
             words[indexSmallest] = temp;
         }
 }
-    }
-    public static void insertionSort(String words){
+    
+    public static void insertionSort(String[] words){
   String temp; 
   int j;
   for (int i =0; i<words.length; i++){
@@ -52,14 +52,114 @@ public class Sorting{
     }
     }
 
-     public static void mergeSort(String words){
-        
+     public static void merge(String[] words, int i, int j, int k){
+        int mergedSize = k - i +1;
+        String mergedString[] = new String [mergedSize];
+        int mergePosition;
+        leftPosition;
+        int rightPosition;
+
+        mergePosition = 0;
+
+        leftPosition = i;
+
+        rightPosition = j + 1;
+
+        while (leftPosition <= j && rightPosition <= k){
+
+            if (words[leftPosition].compareTo(words[rightPosition]<0)){
+                mergedString[mergePosition][mergePosition] = words[leftPosition];
+                leftPosition++;
+            } else{
+                mergedString[mergePosition] = words[rightPosition];
+                rightPosition++;
+            }
+            mergePosition++;
+        }
+       while(leftPos <= j){
+            mergedString[mergePos] = words[leftPos];
+            ++leftPos;
+            ++mergePos;
+        }
+
+        while(rightPos <= k){
+            mergedString[mergePos] = words[rightPos];
+            ++rightPos;
+            ++mergePos;
+        }
+
+        for(mergePos = 0; mergePos < mergedSize; ++mergePos){
+            a[i + mergePos] = mergedString[mergePos];
+        }
+    }
     }
 
-    private static void merge(String a)
-     public static void quickSort(String words){
-        
+    private static void mergeSort(String [] words, int i, int k){
+            int j;
+
+        if(i < k){
+            j = (i + k) / 2;
+
+            mergeSort(words, i, j);
+            mergeSort(words, j + 1, k);
+
+            merge(words, i, j, k);
     }
+
+    public static void mergeSort(String[] words){
+
+        mergeSort(words, 0 , a.length-1);
+    }
+    public static int partition(String [] a, int i, int k) {
+        int midpoint;
+        int low;
+        int high;
+        String pivot;
+        String temp;
+        boolean done;
+
+        midpoint = i + (k - i) / 2;
+        pivot = a[midpoint];
+
+        done = false;
+        low = i;
+        high = k;
+
+        while(!done){
+            while(a[low].compareTo(pivot) < 0){
+                ++low;
+            }
+            while(a[high].compareTo(pivot) > 0){
+                --high;
+            }
+            if(low >= high){
+                done = true;
+            }
+            else {
+                temp = a[low];
+                a[low] = a[high];
+                a[high] = temp;
+
+                ++low;
+                --high;
+            }
+        }
+        return high;
+    }
+    private static void quickSort(String [] words, int i, int k) {
+        int j;
+        if(i >= k){
+            return;
+        }
+
+        j = partition(words, i, k);
+
+        quickSort(words, i, j);
+        quickSort(words, j + 1, k);
+   }
+    public static void quickSort(String [] a){
+        quickSort(a, 0, a.length-1);
+   }
      public static void stalinSort(String words){
         // needs configuring, sample code from geeks
         int j =0;
@@ -68,8 +168,8 @@ public class Sorting{
 
             int moved = 0;
 
-            for(inti = 0; i < (words.size -1 -j); i++){
-                if (arr[i] >arr[i+1]){
+            for(int i = 0; i < (words.size -1 -j); i++){
+                if (arr[i].compareTo(arr[i+1]) > 0){
 
                     vector <int>:: iterator index;
                     int temp;
