@@ -5,7 +5,7 @@ import java.io.*; //  file readder
 public class Tester {
 
     public static void main (String[] args) throws IOException {
-        File myFile = new File("sampleText.txt");
+        File myFile = new File("dictionary.txt");
 
         File fileOutput = new File ("results.txt");
 
@@ -60,7 +60,7 @@ public class Tester {
         addResult(output, startTime, endTime, "merge sort");
 
       //  startTime = System.nanoTime();
-       // Sorting.cocktailSort(f);
+       // Sorting.;
        // endTime = System.nanoTime();
        // addResult(output, startTime, endTime, "cocktail sort");
 
@@ -112,6 +112,10 @@ public class Tester {
 
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   public static void addResult(PrintWriter output, long startTime, long endTime, String sortType){
+        output.println(sortType + (" took: " + (endTime - startTime) + " nanoseconds to sort/search."));
+    }
+
    public static int findSize(Scanner scnr){
         int count = 0;
         while(scnr.hasNext()){
@@ -174,9 +178,7 @@ public class Tester {
 
 
 
-    public static void addResult(PrintWriter output, long startTime, long endTime, String sortType){
-        output.println(sortType + (" took: " + (endTime - startTime) + " nanoseconds to sort/search."));
-    }
+  
 
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 }

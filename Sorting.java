@@ -159,37 +159,40 @@ public class Sorting{
     public static void quickSort(String [] a){
         quickSort(a, 0, a.length-1);
    }
-     public static void stalinSort(String words){
+    /*
+     public static void stalinSort(String[] words){
         // needs configuring, sample code from geeks
      
      
-     /*   int j =0;
+       int j =0;
 
         while(true){
 
             int moved = 0;
 
-            for(int i = 0; i < (words.size -1 -j); i++){
+            for(int i = 0; i < (words.length -1 -j); i++){
                 if (arr[i].compareTo(arr[i+1]) > 0){
 
-                /   vector <int>:: iterator index;
+                    int index;
                     int temp;
-                    index = words.begin() +i +1;
-                    temp = arr[i+1];
-                    words.erase(index);
-
-                    words.insert(words.begin() + moved, temp);
-                    moved++
+                    index = words.get(i);
+                    temp = words.get(i+1);
+                    words.removeElement(index);
+                    words.add(i, temp);
+                    words.removeElement(temp);
+                    words.add(i+1, index);
+                    moved++;
                 }
             }
-            j++
-            if(moved ==0){
+            j++;
+            if (moved ==0){
                 break;
             }
-        }
-        for (int i = 0; i < words.size(); i++){
-            cout << words[i] << ", ";
+                }
+                System.out.println(words);
+                
+            }
+            
 
-            */
-        }
-    }
+*/
+}
