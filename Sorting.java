@@ -2,15 +2,13 @@ public class Sorting{
 
     public static void bubbleSort(String []words){
         // comparing each element in a list , swapping items if necessart, and repeating the pass throug as needed
-        // sample code from csoer
-
-        // compareTo() hello.compareTo(hello) returns zero because they are the same. If first var
+        String temp;
         // if var1.compareTo(var2) > 0, var 1 is lexicographically greater thatn the other string
-        for (int i =0; i< a.length; i++){
+        for (int i =0; i< words.length; i++){
             for (int j = 0; j < words.length -1 -i; j++){
                 if (words[j].compareTo(words[j+1]) > 0) // if a[j] is lexicographically greater than a[j+1]
                 {
-                    int temp = words[j];
+                   temp = words[j];
                     words[j] = words[j+1];
                     words[j+1] = temp;
                 }
@@ -19,13 +17,13 @@ public class Sorting{
 
     }
     public static void selectionSort(String[] words){
-        int smallest;
+        int indexSmallest;
         String temp;
 
         for (int i =0; i < words.length; i++){
 
             indexSmallest = i;
-            for (int j= i+1; i <words.length; j++){
+            for (int j= i+1; j <words.length; j++){
                 if (words[j].compareTo(words[indexSmallest]) < 0)// if a[j] is lexicographically smaller than a at the smallestIndex
                 {
                     indexSmallest = j;
@@ -42,12 +40,12 @@ public class Sorting{
   String temp; 
   int j;
   for (int i =0; i<words.length; i++){
-    j=1;
-    while (j >0 && words[j].compareTo(words[j-1]<0) ){
+    j=i;
+    while (j >0 && words[j].compareTo(words[j-1]) < 0 ){
         temp = words[j];
         words[j] = words[j-1];
         words[j-1] =temp;
-        j--;
+        --j;
     }
     }
     }
@@ -56,7 +54,7 @@ public class Sorting{
         int mergedSize = k - i +1;
         String mergedString[] = new String [mergedSize];
         int mergePosition;
-        leftPosition;
+        int leftPosition;
         int rightPosition;
 
         mergePosition = 0;
@@ -67,8 +65,8 @@ public class Sorting{
 
         while (leftPosition <= j && rightPosition <= k){
 
-            if (words[leftPosition].compareTo(words[rightPosition]<0)){
-                mergedString[mergePosition][mergePosition] = words[leftPosition];
+            if (words[leftPosition].compareTo(words[rightPosition]) <0){
+                mergedString[mergePosition] = words[leftPosition];
                 leftPosition++;
             } else{
                 mergedString[mergePosition] = words[rightPosition];
@@ -76,23 +74,23 @@ public class Sorting{
             }
             mergePosition++;
         }
-       while(leftPos <= j){
-            mergedString[mergePos] = words[leftPos];
-            ++leftPos;
-            ++mergePos;
+       while(leftPosition <= j){
+            mergedString[mergePosition] = words[leftPosition];
+            ++leftPosition;
+            ++mergePosition;
         }
 
-        while(rightPos <= k){
-            mergedString[mergePos] = words[rightPos];
-            ++rightPos;
-            ++mergePos;
+        while(rightPosition <= k){
+            mergedString[mergePosition] = words[rightPosition];
+            ++rightPosition;
+            ++mergePosition;
         }
 
-        for(mergePos = 0; mergePos < mergedSize; ++mergePos){
-            a[i + mergePos] = mergedString[mergePos];
+        for(mergePosition = 0; mergePosition < mergedSize; ++mergePosition){
+            words[i + mergePosition] = mergedString[mergePosition];
         }
     }
-    }
+    
 
     private static void mergeSort(String [] words, int i, int k){
             int j;
@@ -105,10 +103,11 @@ public class Sorting{
 
             merge(words, i, j, k);
     }
+    }
 
     public static void mergeSort(String[] words){
 
-        mergeSort(words, 0 , a.length-1);
+        mergeSort(words, 0 , words.length-1);
     }
     public static int partition(String [] a, int i, int k) {
         int midpoint;
@@ -162,7 +161,9 @@ public class Sorting{
    }
      public static void stalinSort(String words){
         // needs configuring, sample code from geeks
-        int j =0;
+     
+     
+     /*   int j =0;
 
         while(true){
 
@@ -171,7 +172,7 @@ public class Sorting{
             for(int i = 0; i < (words.size -1 -j); i++){
                 if (arr[i].compareTo(arr[i+1]) > 0){
 
-                    vector <int>:: iterator index;
+                /   vector <int>:: iterator index;
                     int temp;
                     index = words.begin() +i +1;
                     temp = arr[i+1];
@@ -188,6 +189,7 @@ public class Sorting{
         }
         for (int i = 0; i < words.size(); i++){
             cout << words[i] << ", ";
+
+            */
         }
     }
-}

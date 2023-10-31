@@ -1,0 +1,13 @@
+bubble sort took: 654367 nanoseconds to sort/search.
+selection sort took: 2502 nanoseconds to sort/search.
+insertion sort took: 1986 nanoseconds to sort/search.
+quick sort took: 3470 nanoseconds to sort/search.
+merge sort took: 1908 nanoseconds to sort/search.
+sequential search for yellow-earth took: 4754 nanoseconds to sort/search.
+binary search for yellow-earth took: 9019 nanoseconds to sort/search.
+sequential search for AMARyYo took: 1914 nanoseconds to sort/search.
+binary search for AMARyYO took: 5055 nanoseconds to sort/search.
+sequential search for amarillo took: 1712 nanoseconds to sort/search.
+binary search for amarillo took: 1522 nanoseconds to sort/search.
+sequential search for yellow took: 2240 nanoseconds to sort/search.
+binary search for yellow took: 1442 nanoseconds to sort/search.
